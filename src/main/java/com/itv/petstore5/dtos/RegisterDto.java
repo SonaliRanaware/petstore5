@@ -1,5 +1,7 @@
 package com.itv.petstore5.dtos;
 
+import com.itv.petstore5.validators.VerifyPassword;
+
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -8,6 +10,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
+@VerifyPassword(Filed="password" ,matchingFiled = "confirmPassword")
+
 public class RegisterDto {
     private Integer id;
     @NotNull @NotEmpty
@@ -17,9 +21,9 @@ private String firstname;
     private String lastname;
     @NotNull @NotEmpty
     private String email;
-    @NotNull @NotEmpty
+  
+
     private String password;
-    @NotNull @NotEmpty
     private String confirmPassword;
     @NotNull @NotEmpty
     @com.itv.petstore5.validators.mobile

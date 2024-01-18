@@ -28,6 +28,7 @@ public class UserService  {
          user.setLastname(regResisterUserDto.getLastname());
           user.setEmail(regResisterUserDto.getEmail());
            user.setPassword(regResisterUserDto.getPassword());
+           user.setConfirmPassword(regResisterUserDto.getConfirmPassword());
             user.setMobile(regResisterUserDto.getMobile());
                user.setSalary(regResisterUserDto.getSalary());
          return users.put(user.getId(),user);
